@@ -1,25 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import React from "react"
+import Header from "./components/Header"
+import Body from "./components/Body"
+import data from "./data"
 
-function App() {
+
+export default function App() {
+  const [heroes, setHeroes] = React.useState(data)
+
+  const [showAll, setShowAll] = React.useState(false)
+
+	function toggleAll() {
+    setHeroes(prevHeroes => {
+      return (
+        prevHeroes.map(prev => {
+          return {...prev, on: !showAll}
+        })
+      )
+    })
+    setShowAll(prevShowAll => !prevShowAll)
+	}
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header shown={showAll} function={toggleAll} />
+      <Body heroes={heroes} setHeroes={setHeroes} />
     </div>
   );
 }
-
-export default App;

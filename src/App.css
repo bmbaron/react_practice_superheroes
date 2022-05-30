@@ -2,37 +2,127 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header {
+  position: fixed;
+  top: 0;
+  height: 6rem;
+  line-height: 6rem;
+  font-size: 2.5rem;
+  width: 100%;
+  background: white;
+  background-image: linear-gradient(rgb(139, 138, 138), yellow);
+  box-shadow: 5px 2px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-around;
+  font-weight: bold;
+  z-index: 1;
+}
+
+.header .main-button {
+  width: 200px;
+  height: 60px;
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: 1.5rem;
+  background: rgb(255, 255, 64);
+  border-radius: 10px;
+  opacity: 0.8;
+}
+
+
+.body {
+  margin: auto;
+  width: 100%;
+  margin-top: 4rem;
+  background: lightgrey;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+
+.card {
+  width: 45%;
+  min-height: 20vh;
+  margin: auto;
+  margin-bottom: auto;
+  margin-top: 2rem;
+  background: white;
+  border: 3px solid black;
+  border-radius: 10px;
+}
+
+.card .top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card .top > * {
+  margin: 20px;
+}
+
+.card .top > h1 {
+  font-size: 3rem;
+  width: 80%;
+  color:rgb(238, 40, 215);
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  opacity: 0.6;
+}
+
+.card .top .button {
+  width: 200px;
+  height: 60px;
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: 1.5rem;
+  background: rgb(90, 201, 238);
+  border-radius: 10px;
+  opacity: 0.7;
+}
+
+.card .bottom {
+  display: flex;
+  flex-direction: row;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.card .bottom > img {
+  height: 250px;
+  width: 150px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 3px solid black;
+  border-radius: 5px;
+  margin: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (max-width: 1200px) {
+  .card {
+    min-height: 10vh;
+    width: 80%;
   }
-  to {
-    transform: rotate(360deg);
+  .card .bottom > img {
+    height: 300px;
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .card .bottom > img {
+    height: 200px;
+    width: 25%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header {
+    font-size: 1.5rem;
+  }
+  .card .top > h1 {
+    font-size: 1.5rem;
+    line-height: 3rem;
+    width: 80%;
   }
 }
