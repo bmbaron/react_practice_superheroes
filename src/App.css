@@ -6,16 +6,21 @@
   position: fixed;
   top: 0;
   height: 6rem;
-  line-height: 6rem;
-  font-size: 2.5rem;
   width: 100%;
-  background: white;
   background-image: linear-gradient(rgb(139, 138, 138), yellow);
   box-shadow: 5px 2px;
   display: flex;
   justify-content: space-around;
-  font-weight: bold;
   z-index: 1;
+}
+
+.header h1 {
+  height: 6rem;
+  line-height: 6rem;
+  font-size: 5vw;
+  width: 100%;
+  font-weight: bold;
+  margin: auto;
 }
 
 .header .main-button {
@@ -117,9 +122,6 @@
 }
 
 @media screen and (max-width: 600px) {
-  .header {
-    font-size: 1.5rem;
-  }
   .card .top > h1 {
     font-size: 1.5rem;
     line-height: 3rem;
