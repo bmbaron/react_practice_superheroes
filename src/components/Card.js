@@ -8,7 +8,7 @@ export default function Card(props) {
 					<h1>
 						{props.name}
 					</h1>
-					<button className="button" onClick={()=> props.function(props.id)}>
+					<button className="button" onClick={props.toggle}>
 						{`${props.on ? "hide" : "show"}`}
 					</button>
 				</div>

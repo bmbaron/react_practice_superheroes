@@ -14,7 +14,7 @@ export default function Body(props) {
 	}
 
 	const Cards = props.heroes.map(hero => {
-		return <Card id={hero.id} name={hero.name} imgs={hero.imgs} on={hero.on} function={toggle}/>
+		return <Card name={hero.name} imgs={hero.imgs} on={hero.on} toggle={()=>toggle(hero.id)}/>
 	})
 
 	return (
