@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "85b2d345fc325ececfec",
-    "url": "/react_practice_superheroes/static/css/main.765d1281.chunk.css"
+    "revision": "c098844553e519edeb8e",
+    "url": "/react_practice_superheroes/static/css/main.fca46054.chunk.css"
   },
   {
-    "revision": "85b2d345fc325ececfec",
-    "url": "/react_practice_superheroes/static/js/main.20ae8858.chunk.js"
+    "revision": "c098844553e519edeb8e",
+    "url": "/react_practice_superheroes/static/js/main.2c1d556e.chunk.js"
   },
   {
     "revision": "605a827ff21ab321587c",
@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/react_practice_superheroes/static/js/2.aeea2de8.chunk.js"
   },
   {
-    "revision": "2554186b5a9cd763748d137e46c57890",
+    "revision": "ff49163e99184e5c680a2b62d7ecd2df",
     "url": "/react_practice_superheroes/index.html"
   }
 ];
