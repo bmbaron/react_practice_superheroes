@@ -63,16 +63,12 @@ body {
   border-radius: 10px;
 }
 
-.card .top {
-  display: flex;
-  justify-content: space-between;
-}
-
 .card .top > * {
-  margin: 20px;
+  margin: auto;
 }
 
 .card .top > h1 {
+  margin-top: 1rem;
   font-size: 3rem;
   width: 80%;
   color:rgb(238, 40, 215);
@@ -115,14 +111,22 @@ body {
   flex-direction: column;
 }
 
-.hero-input {
+.add-hero-section > h1 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.hero-input-name, .hero-input-img {
   margin: auto;
-  margin-top: 2rem;
+  margin-top: 1rem;
   width: 200px;
   height: 30px;
   font-size: 2rem;
   border-radius: 10px;
-  text-indent: 2px;
+}
+
+.hero-input-img {
+  width: 300px;
 }
 
 .hero-button {
@@ -134,6 +138,10 @@ body {
   background: rgb(90, 201, 238);
   opacity: 0.7;
   border-radius: 10px;
+}
+
+.hero-button:hover {
+  cursor: pointer;
 }
 
 @media screen and (max-width: 1200px) {
