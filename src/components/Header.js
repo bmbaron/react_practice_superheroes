@@ -1,6 +1,6 @@
 import React from "react"
 
-export default function Header(props) {
+export default function Header() {
 	return (
 			<header className="header">
 				<div className="name">
@@ -8,9 +8,6 @@ export default function Header(props) {
 						superheroes
 					</h1>
 				</div>
-				<button className="main-button" onClick={props.function}>
-					{props.shown ? "hide all" : "show all"}
-				</button>
 			</header>
 	)
 }

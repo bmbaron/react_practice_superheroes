@@ -1,21 +1,44 @@
-import React from "react"
-import Card from "./Card"
+import React, {useState, useEffect} from "react"
+import { getHeros } from "./FirebaseHeroData"
 
-export default function Body(props) {
 
-	function toggle(id) {
-		props.setHeroes(prevHeroes => {
-			return (
-				prevHeroes.map(hero => {
-					return hero.id === id ? {...hero, on: !hero.on} : hero
-				})
-			)
-		})
-	}
+export default function Body() {
 
-	const Cards = props.heroes.map(hero => {
-		return <Card name={hero.name} imgs={hero.imgs} on={hero.on} toggle={()=>toggle(hero.id)}/>
-	})
+	const [Cards, setCards] = useState('')
+
+	// function toggle(allHeros, heroToChange) {
+	// 	setCards(allHeros.map(hero => {
+	// 		return <Card hero={hero.hero} imgs={hero.imgs} on={!hero.on} id={hero.id} key={hero.key} toggle={()=>toggle(allHeros, heroToChange)}/>
+	// 	}))
+	// }
+
+	const [cloudData, setCloudData] = useState('')
+
+	useEffect(() => {
+		console.log("user effect")
+		getHeros(setCards)
+	}, [])
+
+
+		// const fetchedHeros = cloudData
+		// .then((result) => {
+			// if (cloudData !== '') {
+			// 	console.log("cloudData:")
+
+			// 	setCards(cloudData.map(hero => {
+			// 		return <Card hero={hero.hero} imgs={hero.imgs} on={hero.on} id={hero.id} key={hero.key}/>
+			// 	}))
+				// setCardObjects(cloudData.map(hero => {
+				// 	return {
+				// 		"hero": hero.hero,
+				// 		"imgs": hero.imgs,
+				// 		"on": hero.on,
+				// 		"id": hero.id,
+				// 		"key": hero.key,
+				// 	}
+				// }))
+
+		// })
 
 	return (
 			<div className="body">
