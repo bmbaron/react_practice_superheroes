@@ -1,9 +1,10 @@
-import React, { useState, useEffect} from "react"
+import React, { useState } from "react"
 import Card from './Card'
+
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 // TODO: Add SDKs for Firebase products that you want to use
-import {getFirestore, doc, addDoc, collection, getDoc, getDocs, onSnapshot, setDoc, deleteDoc } from "firebase/firestore"; 
+import {query, orderBy, Timestamp, getFirestore, doc, addDoc, updateDoc, collection, onSnapshot, deleteDoc } from "firebase/firestore"; 
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -22,16 +23,45 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 const heroData = collection(db, 'heros');
+const orderedHeroData = query(heroData, orderBy('created', 'asc'))
 
-
-export function getHeros(setCards) {
-	onSnapshot(heroData, (snapshot) => {
-		setCards(snapshot.docs.map((doc) => {
-
-			return <Card hero={doc.data().hero} img={doc.data().img} on={doc.data().on} id={doc.data().id} key={doc.data().key}/>
+export function getHeros(setCards, handleModal) {
+	onSnapshot(orderedHeroData, (snapshot) => {
+		setCards(snapshot.docs.map((doc, counter) => {
+			if (counter > 7) {
+				return <Card hero={doc.data().hero} img={doc.data().img} on={doc.data().on} id={doc.id} hasButton={true} handleModal={handleModal}/>
+			}
+			else {
+				return <Card hero={doc.data().hero} img={doc.data().img} on={doc.data().on} id={doc.id}/>
+			}
 		}))
 	})
 }
+
+export async function editHero(id, hero, img) {
+	const docRef = doc(db, "heros", id);
+	await updateDoc(docRef, {
+		"hero": hero,
+		"img": img,
+	}).then(() => {
+    console.log("Document has been updated successfully.")
+	})
+	.catch(error => {
+			console.log(error);
+	})
+}
+
+export function deleteHero(id) {
+	const docRef = doc(db, "heros", id);
+
+	deleteDoc(docRef).then(() => {
+    console.log("Entire Document has been deleted successfully.")
+	})
+	.catch(error => {
+			console.log(error);
+	})
+}
+
 
 export default function AddHero() {
 
@@ -52,7 +82,12 @@ export default function AddHero() {
 		setHeroImg('')
 		if (heroName !== "") {
 			const testRef = collection(db, 'heros');
-			addDoc(testRef, {"hero": heroName, "img": heroImg, "key": Math.random()})
+			addDoc(testRef, {
+				"hero": heroName,
+				"img": heroImg,
+				"key": Math.random(),
+				"created": Timestamp.now()
+			})
 			.catch((error) => console.log("fail: " + error))
 		}
 		else {
