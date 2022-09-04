@@ -1,13 +1,13 @@
 {
-  "main.css": "/react_practice_superheroes/static/css/main.b0f5ded2.chunk.css",
-  "main.js": "/react_practice_superheroes/static/js/main.86213169.chunk.js",
-  "main.js.map": "/react_practice_superheroes/static/js/main.86213169.chunk.js.map",
+  "main.css": "/react_practice_superheroes/static/css/main.96e3812e.chunk.css",
+  "main.js": "/react_practice_superheroes/static/js/main.4e0be402.chunk.js",
+  "main.js.map": "/react_practice_superheroes/static/js/main.4e0be402.chunk.js.map",
   "runtime~main.js": "/react_practice_superheroes/static/js/runtime~main.2be2c426.js",
   "runtime~main.js.map": "/react_practice_superheroes/static/js/runtime~main.2be2c426.js.map",
-  "static/js/2.aeea2de8.chunk.js": "/react_practice_superheroes/static/js/2.aeea2de8.chunk.js",
-  "static/js/2.aeea2de8.chunk.js.map": "/react_practice_superheroes/static/js/2.aeea2de8.chunk.js.map",
+  "static/js/2.a46acab8.chunk.js": "/react_practice_superheroes/static/js/2.a46acab8.chunk.js",
+  "static/js/2.a46acab8.chunk.js.map": "/react_practice_superheroes/static/js/2.a46acab8.chunk.js.map",
   "index.html": "/react_practice_superheroes/index.html",
-  "precache-manifest.9fea9cb5a9db7e2035d922b9592fb93a.js": "/react_practice_superheroes/precache-manifest.9fea9cb5a9db7e2035d922b9592fb93a.js",
+  "precache-manifest.7f39d6d403a2645b169353e78c58e24f.js": "/react_practice_superheroes/precache-manifest.7f39d6d403a2645b169353e78c58e24f.js",
   "service-worker.js": "/react_practice_superheroes/service-worker.js",
-  "static/css/main.b0f5ded2.chunk.css.map": "/react_practice_superheroes/static/css/main.b0f5ded2.chunk.css.map"
+  "static/css/main.96e3812e.chunk.css.map": "/react_practice_superheroes/static/css/main.96e3812e.chunk.css.map"
 }
